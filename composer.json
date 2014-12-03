@@ -1,0 +1,22 @@
+{
+    "name": "gimu/unio-php",
+    "type": "project",
+    "description": "A lightweight PHP framework based on the MVC pattern",
+    "keywords": ["framework", "mvc"],
+    "homepage": "https://github.com/gimu/unio-php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gimu",
+            "homepage": "http://gimu.org",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/gimu/unio-php/issues",
+        "source": "https://github.com/gimu/unio-php"
+    },
+    "require":{
+        "phpmailer/phpmailer": "dev-master"
+    }
+}

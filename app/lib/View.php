@@ -1,10 +1,10 @@
 <?php
 
+/**
+ * View library class containing main methods
+ */
 class View {
 
-    /**
-     * View library class containing main methods
-     */
     public function show($name, $layout = 'desktop', $raw = false) {
         // Render respective view
         if ($raw == true) {

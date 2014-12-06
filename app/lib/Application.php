@@ -5,8 +5,9 @@
  * - deals mostly with URL routing
  */
 class Application {
-    private $controller = '';
-    private $method = '';
+    
+    protected $controller = BASE_CONTROLLER;
+    protected $method = BASE_METHOD;
 
     /**
      * Routing
@@ -35,10 +36,10 @@ class Application {
             }
 
             // Leftover from URL-array seen as method parameters
-            $this->params = '';
+            $this->params = $url;
 
-            // Execute controller method
-            $this->controller->{$this->method}($this->params);
+            // Execute the controller function
+            call_user_func_array([$this->controller, $this->method], $this->params);
         }
     }
 

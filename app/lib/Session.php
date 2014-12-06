@@ -5,6 +5,7 @@
  * Example static call: Session:init();
  */
 class Session {
+    
     function __construct() {
 
     }
@@ -25,6 +26,10 @@ class Session {
         if (isset($_SESSION[$key])) {
             return $_SESSION[$key];
         }
+    }
+
+    public static function id() {
+        return session_id();
     }
 
     public static function destroy() {

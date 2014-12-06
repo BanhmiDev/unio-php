@@ -40,6 +40,14 @@ class Application {
 
             // Execute the controller function
             call_user_func_array([$this->controller, $this->method], $this->params);
+
+        } else {
+            // Use the first parameter as method (which should be found in the base controller)
+            require 'app/controllers/' . $this->controller . '.php';
+            $this->controller = new $this->controller();
+            if (isset($url[0])) $this->method = $url[0];
+
+            call_user_func_array([$this->controller, $this->method], []);
         }
     }
 

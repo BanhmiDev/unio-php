@@ -43,11 +43,18 @@ class Application {
 
         } else {
             // Use the first parameter as method (which should be found in the base controller)
-            require 'app/controllers/' . $this->controller . '.php';
-            $this->controller = new $this->controller();
-            if (isset($url[0])) $this->method = $url[0];
+            if (method_exists($this->controller, $url[0])) {
+                require 'app/controllers/' . $this->controller . '.php';
+                $this->controller = new $this->controller();
+                if (isset($url[0])) $this->method = $url[0];
 
-            call_user_func_array([$this->controller, $this->method], []);
+                call_user_func_array([$this->controller, $this->method], []);
+            } else {
+                // If no method is found, redirect to an error page
+                require 'app/controllers/error.php';
+                $this->controller = new Error();
+                call_user_func_array([$this->controller, $this->method], []);
+            }
         }
     }
 

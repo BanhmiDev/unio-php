@@ -49,14 +49,16 @@ class Application {
             if (isset($url[0])) {
                 if (method_exists($this->controller, $url[0])) {
                     $this->method = $url[0];
-
                     call_user_func_array([$this->controller, $this->method], []);
                 } else {
                     // If no method is found, redirect with error method
                     $this->method = 'error';
-
                     call_user_func_array([$this->controller, $this->method], []);
                 }
+            } else {
+                // It's the startpage
+                $this->method = 'index';
+                call_user_func_array([$this->controller, $this->method], []);
             }
         }
     }

@@ -12,6 +12,12 @@ define('DB_USER', 'root');
 define('DB_PASS', '');
 
 /**
+ * Routing related settings
+ */
+define('BASE_CONTROLLER', 'index');
+define('BASE_METHOD', 'index');
+
+/**
  * Miscellaneous settings
  */
 define('DEBUG_MODE', true);

@@ -2,7 +2,7 @@
 
 /**
  * Core of this project
- * - deals mostly with URL routing
+ * - deals with URL routing
  */
 class Application {
     
@@ -11,13 +11,15 @@ class Application {
 
     /**
      * Routing
+     * *URL will be split into parts
+     * 1. Check if controller exists and use it
+     * 2. If controller not found, either use the base-controller or send directly to an error page
      */
     function __construct() {
         $url = $this->parseUrl();
 
         // Check if controller exists
         if (file_exists('app/controllers/' . $url[0] . '.php')) {
-
             $this->controller = $url[0];
             // Unset for later method parameters
             unset($url[0]);
@@ -49,7 +51,21 @@ class Application {
             if (isset($url[0])) {
                 if (method_exists($this->controller, $url[0])) {
                     $this->method = $url[0];
-                    call_user_func_array([$this->controller, $this->method], []);
+                    unset($url[0]);
+
+                    // Second parameter seen as method name
+                    if (isset($url[1])) {
+                        if (method_exists($this->controller, $url[1])) {
+                            $this->method = $url[1];
+                            // Unset for later method parameters
+                            unset($url[1]);
+                        }
+                    }
+
+                    // Leftover from URL-array seen as method parameters
+                    $this->params = $url;
+                    
+                    call_user_func_array([$this->controller, $this->method], $this->params);
                 } else {
                     // If no method is found, redirect with error method
                     $this->method = 'error';

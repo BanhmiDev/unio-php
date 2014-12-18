@@ -1,13 +1,12 @@
 unioPHP
 =======
-
-[![Releases](https://img.shields.io/github/release/gimu/douzo.js.svg?style=flat-square)](https://github.com/gimu/unio-php/releases) [![Issues](https://img.shields.io/github/issues/gimu/douzo.js.svg?style=flat-square)](https://github.com/gimu/unio-php/issues)                         
+[![License](http://img.shields.io/badge/license-MIT-red.svg?style=flat-square)](https://github.com/gimu/unio-php/blob/master/LICENSE.txt) [![Releases](https://img.shields.io/github/release/gimu/douzo.js.svg?style=flat-square)](https://github.com/gimu/unio-php/releases) [![Issues](https://img.shields.io/github/issues/gimu/unio-php.svg?style=flat-square)](https://github.com/gimu/unio-php/issues)                         
 
 A lightweight PHP framework based on the MVC pattern. It also includes a simple MySQL-PDO-Database library.
 
 ## Basics and How To's
 Part of the routing is (currently) done with a .htaccess file, which will probably be replaced in the near future.
-URL requests should look like this: `/controller/method/parameter`.     
+URL requests should look like this: `/controller/method/parameter`. It will either default to the base-controller or to the error-controller if an invalid url was passed.
 
 Naming convention (comes with next update):
 

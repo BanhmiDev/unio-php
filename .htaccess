@@ -1,4 +1,9 @@
+Options +FollowSymLinks -MultiViews
+
 RewriteEngine On
+#Use this if you place the app in a subfolder
+#RewriteBase /subfolder/
+
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-l

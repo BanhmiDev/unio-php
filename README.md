@@ -1,4 +1,4 @@
-unioPHP
+unio-php
 =======
 [![License](http://img.shields.io/badge/license-MIT-red.svg?style=flat-square)](https://github.com/gimu/unio-php/blob/master/LICENSE.txt) [![Releases](https://img.shields.io/github/release/gimu/unio-php.svg?style=flat-square)](https://github.com/gimu/unio-php/releases) [![Issues](https://img.shields.io/github/issues/gimu/unio-php.svg?style=flat-square)](https://github.com/gimu/unio-php/issues)                         
 
@@ -26,8 +26,5 @@ See `/app/config/config.php`.
 ## Demo
 The latest working build is available at [this site](http://gimu.org/unio-php).
 
-### Showcase
-[eCommerce+](http://gimu.org/ecommerce) was certainly built on this framework.
-
 ## License
-unioPHP is licensed under the [MIT](http://opensource.org/licenses/MIT) License.
+unio-php is licensed under the [MIT](http://opensource.org/licenses/MIT) License.

@@ -17,6 +17,26 @@ Naming convention:
 
 Database library documentation coming soon.
 
+### Apache HTTP Server
+Use the included `.htaccess` file.
+
+### Nginx
+Include the following code into the respective server block.
+
+```
+location = / {
+    index index.php;
+}
+
+location / {
+    try_files $uri $uri.html $uri/;
+    index index.php;
+    if (!-e $request_filename) {
+        rewrite ^/(.+)$ /index.php?url=$1;
+    }
+}
+```
+
 ## Installing and running
 Simply clone/copy this project to your working Apache webserver and import the sql file located in the `sql` directory.
 
